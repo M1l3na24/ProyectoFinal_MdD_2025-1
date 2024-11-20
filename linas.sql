@@ -1,0 +1,12 @@
+INSERT INTO TABLE_NAME (Número de Línea,Color,Dirección,Número de Trenes) VALUES (1,'Rosa','Observatorio - Pantitlán',49);
+INSERT INTO TABLE_NAME (Número de Línea,Color,Dirección,Número de Trenes) VALUES (2,'Azul','Cuatro Caminos - Tasqueña',40);
+INSERT INTO TABLE_NAME (Número de Línea,Color,Dirección,Número de Trenes) VALUES (3,'Verde Olivo','Indios Verdes - Universidad',50);
+INSERT INTO TABLE_NAME (Número de Línea,Color,Dirección,Número de Trenes) VALUES (4,'Cian','Martín Carrera - Santa Anita',12);
+INSERT INTO TABLE_NAME (Número de Línea,Color,Dirección,Número de Trenes) VALUES (5,'Amarillo','Pantitlán - Politécnico',25);
+INSERT INTO TABLE_NAME (Número de Línea,Color,Dirección,Número de Trenes) VALUES (6,'Rojo','El Rosario - Martín Carrera',17);
+INSERT INTO TABLE_NAME (Número de Línea,Color,Dirección,Número de Trenes) VALUES (7,'Naranja','El Rosario - Barranca del Muerto',33);
+INSERT INTO TABLE_NAME (Número de Línea,Color,Dirección,Número de Trenes) VALUES (8,'Verde','Garibaldi/Lagunilla - Constitución de 1917',30);
+INSERT INTO TABLE_NAME (Número de Línea,Color,Dirección,Número de Trenes) VALUES (9,'Café','Pantitlán - Centro Médico',29);
+INSERT INTO TABLE_NAME (Número de Línea,Color,Dirección,Número de Trenes) VALUES (12,'Dorado','Tláhuac - Mixcoac',30);
+INSERT INTO TABLE_NAME (Número de Línea,Color,Dirección,Número de Trenes) VALUES ('A','Morado','Pantitlán - La Paz',39);
+INSERT INTO TABLE_NAME (Número de Línea,Color,Dirección,Número de Trenes) VALUES ('B','Verde y Gris','Buenavista - Ciudad Azteca',36);
