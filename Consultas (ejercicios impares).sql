@@ -1,7 +1,9 @@
 --Ej a--
-select a.NumeroLinea, b.NumeroEstacion
-from Linea a, Pertenecer b
-where a.NumeroLinea = b.NumeroLinea;
+select a.NumeroLinea, count(b.NumeroEstacion) as NumeroEstaciones
+from Linea a
+join Pertenecer b on a.NumeroLinea = b.NumeroLinea
+group by a.NumeroLinea
+order by NumeroLinea asc;
 
 --Ej c--
 select a.IDTren, a.NumeroLinea, a.Marca, b.FechaInicio as FechaReparacion, c.IDHangar, c.NumeroEstacion
@@ -12,13 +14,11 @@ where b.FechaInicio = '2023-11-03';
 
 
 --Ej e--
-select *
-from Estacion
-where NumeroEstacion in (
-    select NumeroEstacion
-    from Acceso
-    where HoraApertura = (select HoraApertura from Estacion where Acceso.NumeroEstacion = Estacion.NumeroEstacion)
-    and HoraCierre = (select HoraCierre from Estacion where Acceso.NumeroEstacion = Estacion.NumeroEstacion));
+select distinct E.*
+from Estacion E
+join Acceso A on E.NumeroEstacion = A.NumeroEstacion
+where A.HoraApertura = E.HoraApertura and A.HoraCierre = E.HoraCierre;
+
 
 --Ej g--
 select (FechaFin - FechaInicio) as DiasEnReparacion
@@ -28,6 +28,7 @@ where extract(year from FechaInicio) = 2023
       select idtren
       from tren
       where cast(numerolinea as INT) % 2 = 0);
+
 
 --Ej i--
 select *
@@ -42,18 +43,24 @@ join Telefono b on a.CURP = b.CURP
 where a.Sexo = 'F' and a.CURP not in (
       select CURP
       from Conducir
-      where Turno <> 'M');
+      where Turno <> 'M')
+order by a.Nombre asc;
 
 
 --Ej m--
-select *
+select a.NumeroEstacion, b.*IDHangar, c.*, d.*
 from Estacion a, Hangar b, Reservar c, Tren d
-where a.NumeroEstacion = b.NumeroEstacion and b.IDHangar = c.IDHangar and c.IDTren = d.IDTren and a.NumeroEstacion % 2 = 1;
+where a.NumeroEstacion = b.NumeroEstacion and b.IDHangar = c.IDHangar and c.IDTren = d.IDTren and a.NumeroEstacion % 2 = 1
+order by a.NumeroEstacion asc;
+
 
 --Ej o--
-select count(*) 
-from conductor a
-where date_part('year', age(a.nacimiento)) < 30;
+select Estado,Sexo,
+count(*) as NumeroConductores
+from Conductor
+where DATE_PART('year', AGE(Nacimiento)) < 30
+group by Estado, Sexo
+order by Estado, Sexo;
 
 --Ej q--
 select *
@@ -65,7 +72,8 @@ select a.*
 from Conductor a
 join Conducir b on a.CURP = b.CURP
 join Tren c on b.IDTren = c.IDTren
-where c.AnioFabrica > 2021;
+where c.AnioFabrica > 2021
+order by a.Nombre asc;
 
 --Ej u--
 select *
@@ -80,12 +88,8 @@ update Conductor
 set Salario = Salario * 1.10
 where DATE_PART('year', AGE(Nacimiento)) = 50;
 
---Ej y--
-insert into Linea (NumeroLinea, Nombre)
-values 
-    ('A', 'Línea A'), 
-    ('B', 'Línea B');
 
+--Ej y--
 insert into Tren
 values
     (1, 'A', 'Construcciones y Auxiliar de Ferrocarriles (CAF)', TRUE, 10, 2023),
@@ -98,5 +102,3 @@ values
     (8, 'B', 'Construcciones y Auxiliar de Ferrocarriles (CAF)', TRUE, 10, 2023),
     (9, 'B', 'Construcciones y Auxiliar de Ferrocarriles (CAF)', TRUE, 10, 2023),
     (10, 'B', 'Construcciones y Auxiliar de Ferrocarriles (CAF)', TRUE, 10, 2023);
-
-
