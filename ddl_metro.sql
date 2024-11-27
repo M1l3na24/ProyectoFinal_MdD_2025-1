@@ -25,7 +25,7 @@ PRIMARY KEY (CURP);
 -- Tabla Linea
 CREATE TABLE Linea(
 	-- Aqui se hace la misma observacion que en Tren con el num de linea
-	NumeroLinea CHAR(1), 
+	NumeroLinea CHAR(2),-- 2 para que acepte el 12 
     Nombre VARCHAR(100)
 );
 
@@ -83,7 +83,7 @@ ON UPDATE CASCADE;
 CREATE TABLE Tren(
 	IDTren INT,
 	-- Aqui el diagrama lo marcaba como INT pero hay lineas como A y B entonces lo puse como CHAR(1)
-	NumeroLinea CHAR(1), 
+	NumeroLinea CHAR(2), 
 	Marca VARCHAR(100),
 	Estatus BOOLEAN,
 	Vagones INT,
@@ -122,9 +122,8 @@ ON UPDATE CASCADE;
 -- Tabla Pertenecer
 CREATE TABLE Pertenecer(
 	-- nuevamente se cambio de INT a CHAR(1)
-	NumeroLinea CHAR(1),
-    NumeroEstacion INT,
-    PRIMARY KEY (NumeroLinea, NumeroEstacion)
+	NumeroLinea CHAR(2),
+    NumeroEstacion INT
 );
 
 -- Llaves foranes
