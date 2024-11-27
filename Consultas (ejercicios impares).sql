@@ -1,25 +1,25 @@
 -- Insertar datos en Tren (IDTren inicia en 100)
 INSERT INTO Tren (IDTren, NumeroLinea, Marca, Estatus, Vagones, AnioFabrica) VALUES
-(100, '1', 'MarcaA', TRUE, 8, 2015),
-(101, '2', 'MarcaB', TRUE, 6, 2016),
-(102, '3', 'MarcaC', TRUE, 10, 2018),
-(103, '4', 'MarcaD', TRUE, 8, 2017),
-(104, '5', 'MarcaE', TRUE, 12, 2014),
-(105, '6', 'MarcaF', TRUE, 9, 2020),
-(106, '7', 'MarcaG', TRUE, 7, 2019),
-(107, '8', 'MarcaH', TRUE, 5, 2021),
-(108, '9', 'MarcaI', TRUE, 4, 2013),
-(109, '8', 'MarcaJ', TRUE, 11, 2022),
-(110, '1', 'MarcaK', TRUE, 6, 2020),
-(111, '2', 'MarcaL', TRUE, 9, 2019),
-(112, '3', 'MarcaM', TRUE, 10, 2018),
-(113, '4', 'MarcaN', TRUE, 8, 2021),
-(114, '5', 'MarcaO', TRUE, 7, 2017),
-(115, '6', 'MarcaP', TRUE, 5, 2016),
-(116, '7', 'MarcaQ', TRUE, 11, 2015),
-(117, '8', 'MarcaR', TRUE, 4, 2022),
-(118, '9', 'MarcaS', TRUE, 12, 2014),
-(119, '8', 'MarcaT', TRUE, 6, 2013);
+(1900, '1', 'MarcaA', FALSE, 8, 2015),
+(1901, '2', 'MarcaB', FALSE, 6, 2016),
+(1902, '3', 'MarcaC', FALSE, 10, 2018),
+(1903, '4', 'MarcaD', FALSE, 8, 2017),
+(1904, '5', 'MarcaE', FALSE, 12, 2014),
+(1905, '6', 'MarcaF', FALSE, 9, 2020),
+(1906, '7', 'MarcaG', FALSE, 7, 2019),
+(1907, '8', 'MarcaH', FALSE, 5, 2021),
+(1908, '9', 'MarcaI', FALSE, 4, 2013),
+(1909, '8', 'MarcaJ', FALSE, 11, 2022),
+(1910, '1', 'MarcaK', FALSE, 6, 2020),
+(1911, '2', 'MarcaL', FALSE, 9, 2019),
+(1912, '3', 'MarcaM', FALSE, 10, 2018),
+(1913, '4', 'MarcaN', FALSE, 8, 2021),
+(1914, '5', 'MarcaO', FALSE, 7, 2017),
+(1915, '6', 'MarcaP', FALSE, 5, 2016),
+(1916, '7', 'MarcaQ', FALSE, 11, 2015),
+(1917, '8', 'MarcaR', FALSE, 4, 2022),
+(1918, '9', 'MarcaS', FALSE, 12, 2014),
+(1919, '8', 'MarcaT', FALSE, 6, 2013);
 
 -- Insertar datos en Hangar (IDHangar inicia en 100, NúmeroEstacion de 1 a 78)
 INSERT INTO Hangar (IDHangar, NumeroEstacion) VALUES
@@ -46,26 +46,26 @@ INSERT INTO Hangar (IDHangar, NumeroEstacion) VALUES
 
 -- Insertar datos en Reservar (20 tuplas con FechaInicio = '2023-11-03')
 INSERT INTO Reservar (IDTren, IDHangar, FechaInicio, FechaFin) VALUES
-(100, 100, '2023-11-03', '2023-11-10'),
-(101, 101, '2023-11-03', '2023-11-12'),
-(102, 102, '2023-11-03', '2023-11-15'),
-(103, 103, '2023-11-03', '2023-11-11'),
-(104, 104, '2023-11-03', '2023-11-14'),
-(105, 105, '2023-11-03', '2023-11-13'),
-(106, 106, '2023-11-03', '2023-11-08'),
-(107, 107, '2023-11-03', '2023-11-16'),
-(108, 108, '2023-11-03', '2023-11-17'),
-(109, 109, '2023-11-03', '2023-11-18'),
-(110, 110, '2023-11-03', '2023-11-09'),
-(111, 111, '2023-11-03', '2023-11-11'),
-(112, 112, '2023-11-03', '2023-11-14'),
-(113, 113, '2023-11-03', '2023-11-15'),
-(114, 114, '2023-11-03', '2023-11-13'),
-(115, 115, '2023-11-03', '2023-11-16'),
-(116, 116, '2023-11-03', '2023-11-10'),
-(117, 117, '2023-11-03', '2023-11-12'),
-(118, 118, '2023-11-03', '2023-11-17'),
-(119, 119, '2023-11-03', '2023-11-18');
+(1900, 100, '2023-11-03', '2023-11-10'),
+(1901, 101, '2023-11-03', '2023-11-12'),
+(1902, 102, '2023-11-03', '2023-11-15'),
+(1903, 103, '2023-11-03', '2023-11-11'),
+(1904, 104, '2023-11-03', '2023-11-14'),
+(1905, 105, '2023-11-03', '2023-11-13'),
+(1906, 106, '2023-11-03', '2023-11-08'),
+(1907, 107, '2023-11-03', '2023-11-16'),
+(1908, 108, '2023-11-03', '2023-11-17'),
+(1909, 109, '2023-11-03', '2023-11-18'),
+(1910, 110, '2023-11-03', '2023-11-09'),
+(1911, 111, '2023-11-03', '2023-11-11'),
+(1912, 112, '2023-11-03', '2023-11-14'),
+(1913, 113, '2023-11-03', '2023-11-15'),
+(1914, 114, '2023-11-03', '2023-11-13'),
+(1915, 115, '2023-11-03', '2023-11-16'),
+(1916, 116, '2023-11-03', '2023-11-10'),
+(1917, 117, '2023-11-03', '2023-11-12'),
+(1918, 118, '2023-11-03', '2023-11-17'),
+(1919, 119, '2023-11-03', '2023-11-18');
 
 --Más Alonsos--
 INSERT INTO Conductor (CURP, Nombre, Paterno, Materno, Sexo, Salario, Nacimiento, Estado) VALUES 
@@ -146,11 +146,11 @@ group by a.NumeroLinea
 order by NumeroLinea asc;
 
 --Ej c--
-select a.IDTren, a.NumeroLinea, a.Marca, b.FechaInicio as FechaReparacion, c.IDHangar, c.NumeroEstacion
-from Tren a
-inner join Reservar b on a.IDTren = b.IDTren
-inner join Hangar c on b.IDHangar = c.IDHangar
-where b.FechaInicio = '2023-11-03';
+select t.IDTren, t.NumeroLinea, t.Marca, r.FechaInicio as FechaReparacion, h.IDHangar, h.NumeroEstacion as EstacionHangar
+from Tren t
+inner join Reservar r on t.IDTren = r.IDTren
+inner join Hangar h on r.IDHangar = h.IDHangar
+where r.FechaInicio = '2023-11-03'and t.Estatus = FALSE;
 
 
 --Ej e--
@@ -161,16 +161,26 @@ where A.HoraApertura = E.HoraApertura and A.HoraCierre = E.HoraCierre;
 
 
 --Ej g--
-select t.NumeroLinea, (r.FechaFin - r.FechaInicio) AS DiasEnReparacion
+select 
+    t.NumeroLinea, 
+    sum(r.FechaFin - r.FechaInicio) as DiasTotalesEnReparacion
 from Reservar r
 join Tren t on r.IDTren = t.IDTren
-where extract(year from r.FechaInicio) = 2023 and t.NumeroLinea in ('2', '4', '6', '8', '12');
+where extract(year from r.FechaInicio) = 2023
+  and t.Estatus = FALSE
+  and t.NumeroLinea in ('2', '4', '6', '8', '12') -- Filtra líneas específicas
+group by t.NumeroLinea
+order by t.NumeroLinea asc;
+
+
 
 
 --Ej i--
-select *
+select a.NumeroEstacion, a.NombreEstacion, b.IDServicio, c.Nombre as NombreServicio, c.Tipo as TipoServicio
 from Estacion a
-join Conectar b on a.NumeroEstacion = b.NumeroEstacion;
+join Conectar b on a.NumeroEstacion = b.NumeroEstacion
+join Servicio c on b.IDServicio = c.IDServicio;
+
 
 
 --Ej k--
