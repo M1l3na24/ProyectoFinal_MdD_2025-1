@@ -99,11 +99,11 @@ INSERT INTO Conductor (CURP, Nombre, Paterno, Materno, Sexo, Salario, Nacimiento
 ('MERV811223BVX22', 'Verónica', 'Mendoza', 'Ruiz', 'F', 26738.53, '1981-12-23', 'Yucatán'),
 ('CRMV110517MGR23', 'Verónica', 'Cruz', 'Morales', 'F', 24947.35, '2011-05-17', 'Ciudad de México'),
 ('MELA040511EIW24', 'Alonso', 'Mendoza', 'López', 'M', 22630.22, '2004-05-11', 'Guanajuato'),
-('PÉCA990419LEB25', 'Alonso', 'Pérez', 'Cruz', 'M', 25515.38, '1999-04-19', 'Puebla'),
-('PÉRV650101FZM26', 'Verónica', 'Pérez', 'Ruiz', 'F', 23977.15, '1965-01-01', 'Nuevo León'),
-('MOLV630821NUY27', 'Verónica', 'Morales', 'López', 'F', 26575.67, '1963-08-21', 'Puebla'),
-('HEVA050702DHX28', 'Alonso', 'Hernández', 'Vargas', 'M', 28612.95, '2005-07-02', 'Jalisco'),
-('MEHA190110PCT29', 'Alonso', 'Mendoza', 'Hernández', 'M', 29794.91, '2019-01-10', 'Veracruz'),
+('GAMA990419HHDLR1', 'Alonso Ricardo', 'García', 'Martínez', 'M', 27515.38, '1999-04-19', 'Hidalgo'),
+('RAGO650101MCMZL2', 'Alonso Alejandr', 'Ramírez', 'Gómez', 'M', 24977.15, '1965-01-01', 'Coahuila'),
+('SAHE630821MTRLZ3', 'Egdgar Alonso', 'Sánchez', 'Hernández', 'M', 27575.67, '1963-08-21', 'Tlaxcala'),
+('TOFL050702HGRFR4', 'Alonso Eduardo', 'Torres', 'Flores', 'M', 29612.95, '2005-07-02', 'Guerrero')
+('CARO190110HTCRJ5', 'Alonso Javier', 'Castillo', 'Rojas', 'M', 30794.91, '2019-01-10', 'Tabasco'),
 ('MELV801225AXQ30', 'Verónica', 'Mendoza', 'López', 'F', 22758.41, '1980-12-25', 'Veracruz');
 
 
@@ -195,9 +195,15 @@ order by a.Nombre asc;
 
 
 --Ej m--
-select a.NumeroEstacion, b.*IDHangar, c.*, d.*
-from Estacion a, Hangar b, Reservar c, Tren d
-where a.NumeroEstacion = b.NumeroEstacion and b.IDHangar = c.IDHangar and c.IDTren = d.IDTren and a.NumeroEstacion % 2 = 1
+select a.NumeroEstacion, a.NombreEstacion, c.FechaInicio,
+    c.FechaFin, c.IDHangar, d.IDTren,
+	d.NumeroLinea, d.Marca, d.Estatus,
+    d.Vagones,d.AnioFabrica
+from Estacion a
+join Hangar b on a.NumeroEstacion = b.NumeroEstacion
+join Reservar c on b.IDHangar = c.IDHangar
+join Tren d on c.IDTren = d.IDTren
+where a.NumeroEstacion % 2 = 1
 order by a.NumeroEstacion asc;
 
 
